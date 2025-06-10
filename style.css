@@ -1,0 +1,204 @@
+* {
+    font-family: Poppins, 'Courier New', Courier, monospace;
+}
+
+body {
+    height: 100vh;
+    margin: 0;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #d5cfbc;
+    padding: 30px;
+}
+
+.calculator {
+    box-sizing: border-box;
+    max-width: 400px;
+    width: 100%;
+    padding: 5px;
+    border-radius: 4px;
+    background-color: rgb(4, 4, 4);
+
+    display: grid;
+    gap: 4px;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas:
+        "displays displays displays displays"
+        "AC . del div"
+        "seven eight nine mult"
+        "four five six minus"
+        "one two three plus"
+        "negate ze coma equals";
+}
+
+button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    height: 60px;
+    font-size: 1.1em;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.displays {
+    grid-area: displays;
+    margin-bottom: 5px;
+    display: flex;
+    flex-direction: column;
+    box-sizing: border-box;
+    padding: 10px 5px 0px 5px;
+}
+
+.displays input {
+    text-align: right;
+    flex-grow: 1;
+    background-color: transparent;
+    border: none;
+    color: white;
+}
+
+.displays input:nth-child(1) {
+    color: #7f7f7d;
+    font-size: 1.2em;
+}
+
+.displays input:nth-child(2) {
+    font-size: 2em;
+    font-weight: 600;
+}
+
+.digit,
+.coma,
+.negate,
+.delete {
+    background-color: rgb(155, 151, 151);
+    color: white;
+}
+
+.digit:hover,
+.coma:hover,
+.negate:hover,
+.delete:hover {
+    background-color: rgb(117, 116, 116);
+}
+
+.negate {
+    grid-area: negate;
+    font-size: 12px
+}
+
+.delete {
+    grid-area: del;
+}
+
+.operator {
+    background-color: #f6a925;
+    color: white;
+}
+
+.operator:hover {
+    background-color: #de8f07;
+}
+
+.AC {
+    background-color: rgb(248, 101, 101);
+    color: white;
+
+    grid-area: AC;
+}
+
+.AC:hover {
+    background-color: rgba(248, 101, 101, 0.749);
+}
+
+.percentage {
+    background-color: #f57d05;
+    color:rgb(46, 45, 45);
+    grid-area: precentage;
+}
+
+.percentage:hover {
+    background-color: #464646;
+}
+
+.equals {
+    background-color: #03c2bf;
+    color: white;
+
+    grid-area: equals;
+}
+
+.equals:hover {
+    background-color: #039592;
+}
+
+.coma {
+    grid-area: coma;
+}
+
+.digit[data-value="0"] {
+    grid-area: ze;
+}
+
+.digit[data-value="1"] {
+    grid-area: one;
+}
+
+.digit[data-value="2"] {
+    grid-area: two;
+}
+
+.digit[data-value="3"] {
+    grid-area: three;
+}
+
+.digit[data-value="4"] {
+    grid-area: four;
+}
+
+.digit[data-value="5"] {
+    grid-area: five;
+}
+
+.digit[data-value="6"] {
+    grid-area: six;
+}
+
+.digit[data-value="7"] {
+    grid-area: seven;
+}
+
+.digit[data-value="8"] {
+    grid-area: eight;
+}
+
+.digit[data-value="9"] {
+    grid-area: nine;
+}
+
+.operator[data-value="+"] {
+    grid-area: plus;
+}
+
+.operator[data-value="-"] {
+    grid-area: minus;
+}
+
+.operator[data-value="*"] {
+    grid-area: mult;
+}
+
+.operator[data-value="/"] {
+    grid-area: div;
+}
+
+.image {
+    position: absolute;
+    width: 50px;
+    bottom: 0;
+    right: 20px;
+}
